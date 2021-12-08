@@ -1,0 +1,92 @@
+/*========================== GOOGLE FONTS =============================*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+/*========================= VARIABLES ========================*/
+
+/*========================= Colors =========================*/
+$white: #fff;
+$pr-blue: hsl(246, 80%, 60%);
+$pr-orange: hsl(15, 100%, 70%);
+$pr-soft-blue: hsl(195, 74%, 62%);
+$pr-light-red: hsl(348, 100%, 68%);
+$pr-lime-green: hsl(145, 58%, 55%);
+$pr-violet: hsl(264, 64%, 52%);
+$pr-soft-orange: hsl(43, 84%, 65%);
+$nt-very-dark-blue: hsl(226,43%,10%);
+$nt-dark-blue: hsl(235, 46%, 20%);
+$nt-desaturated-blue: hsl(235, 45%, 61%);
+$nt-pale-blue: hsl(236, 100%, 87%);
+
+
+/*======================== Font =======================*/
+
+$body-copy: 18px; //card titles
+
+/*========== Weights ==============*/
+$font-small: 300;
+$font-regular: 400;
+$font-bold: 500;
+
+
+/*======================= BreakPoints ====================*/
+
+$breakpoints:(
+  'tablet': 50em,
+  'desktop': 70em
+);
+
+/*====================== Mixins =====================*/
+
+@mixin flex-container($direction, $main, $cross, $wrap){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $main;
+  align-items: $cross;
+  flex-wrap: $wrap;
+}
+
+@mixin mq($breakpoint){
+  @if map-has-key($breakpoints, $breakpoint){
+    @media (min-width: map-get($breakpoints, $breakpoint)){
+      @content;
+    }
+  } @else {
+    @warn 'Error to retrieve from breakpoint';
+  }
+}
+
+/*===================== BASE ======================*/
+
+*,
+::after,
+::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  max-width: 100%;
+}
+
+html{
+  height: 100vh;
+}
+
+body{
+  height: 100%;
+  @include flex-container(column, center, center, nowrap);
+  font-family: 'Rubik', sans-serif;
+}
+
+li{
+  list-style: none;
+
+  p{
+    cursor: pointer;
+  }
+}
+
+/*====================== DASHBOARD ====================*/
+
+
