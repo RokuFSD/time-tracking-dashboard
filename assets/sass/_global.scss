@@ -1,5 +1,5 @@
 /*========================== GOOGLE FONTS =============================*/
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
 /*========================= VARIABLES ========================*/
 
@@ -12,11 +12,10 @@ $pr-light-red: hsl(348, 100%, 68%);
 $pr-lime-green: hsl(145, 58%, 55%);
 $pr-violet: hsl(264, 64%, 52%);
 $pr-soft-orange: hsl(43, 84%, 65%);
-$nt-very-dark-blue: hsl(226,43%,10%);
+$nt-very-dark-blue: hsl(226, 43%, 10%);
 $nt-dark-blue: hsl(235, 46%, 20%);
 $nt-desaturated-blue: hsl(235, 45%, 61%);
 $nt-pale-blue: hsl(236, 100%, 87%);
-
 
 /*======================== Font =======================*/
 
@@ -27,17 +26,16 @@ $font-small: 300;
 $font-regular: 400;
 $font-bold: 500;
 
-
 /*======================= BreakPoints ====================*/
 
-$breakpoints:(
-  'tablet': 50em,
-  'desktop': 70em
+$breakpoints: (
+  "tablet": 50em,
+  "desktop": 70em,
 );
 
 /*====================== Mixins =====================*/
 
-@mixin flex-container($direction, $main, $cross, $wrap){
+@mixin flex-container($direction, $main, $cross, $wrap) {
   display: flex;
   flex-direction: $direction;
   justify-content: $main;
@@ -45,9 +43,9 @@ $breakpoints:(
   flex-wrap: $wrap;
 }
 
-@mixin mq($breakpoint){
-  @if map-has-key($breakpoints, $breakpoint){
-    @media (min-width: map-get($breakpoints, $breakpoint)){
+@mixin mq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
       @content;
     }
   } @else {
@@ -59,34 +57,58 @@ $breakpoints:(
 
 *,
 ::after,
-::before{
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
-html{
+html {
   height: 100vh;
 }
 
-body{
+body {
   height: 100%;
   @include flex-container(column, center, center, nowrap);
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
+  background: $nt-very-dark-blue;
 }
 
-li{
+li {
   list-style: none;
 
-  p{
+  p {
     cursor: pointer;
   }
 }
 
 /*====================== DASHBOARD ====================*/
 
+.dashboard {
+  &__main {
+    @include flex-container(column, center, space-between, wrap);
 
+    &-profile {
+      @include flex-container(row, flex-start, center, wrap);
+      background: $pr-blue;
+      color: $white;
+
+      img {
+        flex: 1;
+        max-width: 3em;
+        margin: 1rem;
+        border-radius: 50%;
+        outline: 2.5px solid $white;
+      }
+
+      p,
+      h2 {
+        flex: 2;
+      }
+    }
+  }
+}
