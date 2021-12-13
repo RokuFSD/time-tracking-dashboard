@@ -25,11 +25,6 @@ html {
 
 body {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
   font-family: "Rubik", sans-serif;
   background: #0f1424;
 }
@@ -48,6 +43,7 @@ li p {
   justify-content: center;
   align-items: space-between;
   flex-wrap: wrap;
+  position: relative;
 }
 .dashboard__main-profile {
   display: flex;
@@ -55,19 +51,50 @@ li p {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  z-index: 30;
   background: #5847eb;
   color: #fff;
+  border-radius: 0 0 0.75rem 0.75rem;
+  padding-inline-start: 1.5rem;
+  padding-block: 1rem;
 }
 .dashboard__main-profile img {
-  flex: 1;
-  max-width: 3em;
+  max-width: 3.5em;
   margin: 1rem;
   border-radius: 50%;
   outline: 2.5px solid #fff;
 }
 .dashboard__main-profile p,
 .dashboard__main-profile h2 {
-  flex: 2;
+  font-weight: 300;
+}
+.dashboard__main-profile p {
+  font-size: 0.9em;
+  color: #bdc1ff;
+}
+.dashboard__main-selector {
+  width: 100%;
+  position: absolute;
+  bottom: -4rem;
+  background: #1c1f4a;
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+.dashboard__main-selector ul {
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding-block: 2rem 1.5rem;
+  color: #6f76c8;
+}
+.dashboard__card {
+  background: #1c1f4a;
+}
+.dashboard__card-data {
+  border-radius: 0.75rem;
+  color: #fff;
 }
 
 .container {

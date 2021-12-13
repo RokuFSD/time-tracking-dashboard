@@ -73,7 +73,6 @@ html {
 
 body {
   height: 100%;
-  @include flex-container(column, center, center, nowrap);
   font-family: "Rubik", sans-serif;
   background: $nt-very-dark-blue;
 }
@@ -89,17 +88,22 @@ li {
 /*====================== DASHBOARD ====================*/
 
 .dashboard {
+
   &__main {
     @include flex-container(column, center, space-between, wrap);
+    position: relative;
 
     &-profile {
       @include flex-container(row, flex-start, center, wrap);
+      z-index: 30;
       background: $pr-blue;
       color: $white;
+      border-radius: 0 0 .75rem .75rem;
+      padding-inline-start: 1.5rem;
+      padding-block: 1rem;
 
       img {
-        flex: 1;
-        max-width: 3em;
+        max-width: 3.5em;
         margin: 1rem;
         border-radius: 50%;
         outline: 2.5px solid $white;
@@ -107,8 +111,39 @@ li {
 
       p,
       h2 {
-        flex: 2;
+	font-weight: $font-small;
       }
+
+      p{
+	font-size: .9em;
+	color: $nt-pale-blue;
+      }
+
+    }
+
+    &-selector{
+      width: 100%;
+      position: absolute;
+      bottom: -4rem;
+      background: $nt-dark-blue;
+      border-radius: 0 0 .75rem .75rem;
+
+      ul{
+	height: 5rem;
+	@include flex-container(row, space-around, flex-end, wrap);
+	padding-block: 2rem 1.5rem;
+	color:  $nt-desaturated-blue;
+      }
+      
+    }
+  }
+
+  &__card{
+    background: $nt-dark-blue;
+
+    &-data{
+      border-radius: .75rem;
+      color: $white;
     }
   }
 }
