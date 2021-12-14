@@ -87,7 +87,16 @@ li p {
   align-items: flex-end;
   flex-wrap: wrap;
   padding-block: 2rem 1.5rem;
+}
+.dashboard__main-selector ul a {
   color: #6f76c8;
+  text-decoration: none;
+}
+.dashboard__main-selector ul a:hover {
+  color: #fff;
+}
+.dashboard__main-selector ul .selected {
+  color: #fff;
 }
 .dashboard__card {
   position: relative;
@@ -113,13 +122,48 @@ li p {
   padding-inline-end: 1rem;
 }
 .dashboard__card-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 80%;
   top: 2.25rem;
+  padding-inline: 2rem;
+  padding-block-start: 1rem;
   background: #1c1f4a;
   border-radius: inherit;
   color: #fff;
+  gap: 0.5rem;
+}
+.dashboard__card-data .data__header,
+.dashboard__card-data .data__stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.dashboard__card-data h3 {
+  font-weight: 400;
+}
+.dashboard__card-data h2 {
+  font-size: 2em;
+  font-weight: 300;
+}
+.dashboard__card-data p {
+  color: #bdc1ff;
+}
+.dashboard__card-data button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.dashboard__card-data button img:hover {
+  filter: brightness(200%);
 }
 
 /*========================= CARDS ========================*/

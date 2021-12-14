@@ -45,9 +45,9 @@
 
           <div class="dashboard__main-selector">
             <ul>
-              <li><p onclick="changeCards();return false;">Daily</p></li>
-              <li><p onclick="changeCards();return false;">Weekly</p></li>
-              <li><p onclick="changeCards();return false;">Monthly</p></li>
+	      <li><a href="javascript:void(0)" onclick="changeCards('daily')">Daily</a></li>
+              <li><a href="javascript:void(0)" onclick="changeCards(weekly)" class="selected">Weekly</a></li>
+              <li><a href="javascript:void(0)" onclick="changeCards(monthly)">Monthly</a></li>
             </ul>
           </div>
         </div>
@@ -56,18 +56,35 @@
 	  <div class="card__icon">
 	    <img src="/assets/images/icon-work.svg" alt="">
 	  </div>
-          <div class="dashboard__card-data">
-	    Work 5hrs
+          <div class="dashboard__card-data" id="data">
+	    
+	    <div class="data__header">
+
+	      <h3>Work</h3>
+
+	      <button>
+		<img src="/assets/images/icon-ellipsis.svg" alt="">
+	      </button>
+
+	    </div>
+
+	    <div class="data__stats">
+	      <h2>5hrs</h2>
+	      <p>Previous - 7hrs</p>
+	    </div>
+
+
 	    <!-- daily -->
-	    Previous - 7hrs
 	    <!-- daily -->
-	    32hrs
+
+	    
+	    <!-- 32hrs -->
 	    <!-- weekly -->
-	    Previous - 36hrs
+	    <!--Previous - 36hrs -->
 	    <!-- weekly -->
-	    103hrs
+	    <!--103hrs -->
 	    <!-- monthly -->
-	    Previous - 128hrs
+	    <!--Previous - 128hrs -->
 	    <!-- monthly -->
 	  </div>
         </div>
@@ -125,10 +142,16 @@
         </div>
 
       </div>
+
     </main>
 
     <!-- ================== FOOTER ==================== -->
-    <footer class="container"></footer>
+    <footer class="container">
+      <div class="attribution">
+	Challenge by
+	<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
 
 
     Study 0hrs
@@ -182,13 +205,6 @@
     <!-- monthly -->
     Previous - 11hrs
     <!-- monthly -->
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
     <script src="/assets/js/main.js"></script>
   </body>
 </html>

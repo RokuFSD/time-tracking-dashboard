@@ -130,7 +130,19 @@ li {
         height: 5rem;
         @include flex-container(row, space-around, flex-end, wrap);
         padding-block: 2rem 1.5rem;
-        color: $nt-desaturated-blue;
+
+	a{
+	  color: $nt-desaturated-blue;
+	  text-decoration: none;
+	}
+
+	a:hover{
+	  color: $white;
+	}
+
+	.selected{
+	  color: $white;
+	}
       }
     }
   }
@@ -152,6 +164,7 @@ li {
 	padding-inline-end: 1rem;
       }
     }
+
     /*
     img {
       position: absolute;
@@ -161,13 +174,46 @@ li {
     */
 
     &-data {
+      @include flex-container(column, flex-start, flex-start, wrap);
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 80%;
       top: 2.25rem;
+      padding-inline: 2rem;
+      padding-block-start: 1rem;
       background: $nt-dark-blue;
       border-radius: inherit;
       color: $white;
+      gap: .5rem;
+
+      .data__header,
+      .data__stats{
+	@include flex-container(row, space-between, center, wrap);
+	width: 100%;
+      }
+
+      h3{
+	font-weight: $font-regular;
+      }
+
+      h2{
+	font-size: 2em;
+	font-weight: $font-small;
+      }
+
+      p{
+	color: $nt-pale-blue;
+      }
+
+      button{
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	img:hover{
+	  filter: brightness(200%);
+	}
+      }
     }
   }
 }
