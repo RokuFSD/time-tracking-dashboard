@@ -97,6 +97,11 @@ li p {
   color: #fff;
 }
 
+/*========================= CARDS ========================*/
+#work {
+  background: #ff8c66;
+}
+
 .container {
   max-width: 80%;
   margin-inline: auto;
