@@ -1,17 +1,15 @@
 const selector = document.querySelectorAll('a[href="javascript:void(0)"]');
 
 const getSelected = () => {
-  selector.forEach(element => {
+  return selector.forEach(element => {
     if(element.className == 'selected'){
-      console.log(element);
-      return element;
+      return element.id;
     }
   })
 }
 
-const changeCards = (valor) => {
-  getSelected();
-  console.log(valor);
 
+const changeCards = (valor) => {
+  console.log(getSelected());
 }
 
