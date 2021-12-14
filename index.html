@@ -45,38 +45,26 @@
           <div class="dashboard__main-selector">
             <ul>
               <li>
-                <a
-                  href="javascript:void(0)"
-                  onclick="changeCards('daily')"
-                  id="daily"
-                  >Daily</a
-                >
+                <a href="javascript:void(0)" id="daily">Daily</a>
               </li>
               <li>
-                <a
-                  href="javascript:void(0)"
-                  onclick="changeCards('weekly')"
-                  id="weekly"
-                  class="selected"
+                <a href="javascript:void(0)" id="weekly" class="selected"
                   >Weekly</a
                 >
               </li>
               <li>
-                <a
-                  href="javascript:void(0)"
-                  onclick="changeCards('monthly')"
-                  id="monthly"
-                  >Monthly</a
-                >
+                <a href="javascript:void(0)" id="monthly">Monthly</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div class="dashboard__card" id="work">
+
           <div class="card__icon">
             <img src="/assets/images/icon-work.svg" alt="" />
           </div>
+
           <div class="dashboard__card-data" id="data">
             <div class="data__header">
               <h3>Work</h3>
@@ -91,17 +79,6 @@
               <p>Previous - 7hrs</p>
             </div>
 
-            <!-- daily -->
-            <!-- daily -->
-
-            <!-- 32hrs -->
-            <!-- weekly -->
-            <!--Previous - 36hrs -->
-            <!-- weekly -->
-            <!--103hrs -->
-            <!-- monthly -->
-            <!--Previous - 128hrs -->
-            <!-- monthly -->
           </div>
         </div>
 
@@ -110,18 +87,29 @@
             <img src="/assets/images/icon-play.svg" alt="" />
           </div>
           <div class="dashboard__card-data">
-            Play 1hr
-            <!-- daily -->
-            Previous - 2hrs
-            <!-- daily -->
+	    <div class="data__header">
+	      <h3>Play</h3>
+
+	      <button>
+		<img src="/assets/images/icon-ellipsis.svg" alt="">
+	      </button>
+	    </div>
+
+	    <div class="data__stats">
+	      <h2>1hr</h2>
+	      <p>Previous - 2Hrs</p>
+	    </div>
+
+	    <!--
             10hrs
-            <!-- weekly -->
+             weekly 
             Previous - 8hrs
-            <!-- weekly -->
+             weekly 
             23hrs
-            <!-- monthly -->
+             monthly 
             Previous - 29hrs
-            <!-- monthly -->
+             monthly 
+	    -->
           </div>
         </div>
 
@@ -129,28 +117,77 @@
           <div class="card__icon">
             <img src="/assets/images/icon-study.svg" alt="" />
           </div>
-          <div class="dashboard__card-data"></div>
+          <div class="dashboard__card-data">
+
+	    <div class="data__header">
+	      <h3>Study</h3>
+	      <button>
+		<img src="/assets/images/icon-ellipsis.svg" alt="" srcset="">
+	      </button>
+	    </div>
+
+	    <div class="data__stats">
+	      <h2>0hrs</h2>
+	      <p>Previous - 1hrs</p>
+	    </div>
+	  </div>
         </div>
 
         <div class="dashboard__card" id="exercise">
           <div class="card__icon">
             <img src="/assets/images/icon-exercise.svg" alt="" />
           </div>
-          <div class="dashboard__card-data"></div>
+
+          <div class="dashboard__card-data">
+	    <div class="data__header">
+	      <h3>Exercise</h3>
+	      <button>
+		<img src="/assets/images/icon-ellipsis.svg" alt="">
+	      </button>
+	    </div>
+
+	    <div class="data__stats">
+	      <h2>1hr</h2>
+	      <p>Previous - 1hr</p>
+	    </div>
+	  </div>
         </div>
 
         <div class="dashboard__card" id="social">
           <div class="card__icon">
             <img src="/assets/images/icon-social.svg" alt="" />
           </div>
-          <div class="dashboard__card-data"></div>
+          <div class="dashboard__card-data">
+	    <div class="data__header">
+	      <h3></h3>
+	      <button>
+		<img src="/assets/images/icon-ellipsis.svg" alt="">
+	      </button>
+	    </div>
+	    <div class="data__stats">
+	      <h2></h2>
+	      <p></p>
+	    </div>
+
+	  </div>
         </div>
 
         <div class="dashboard__card" id="self-care">
           <div class="card__icon">
             <img src="/assets/images/icon-self-care.svg" alt="" />
           </div>
-          <div class="dashboard__card-data"></div>
+          <div class="dashboard__card-data">
+	    <div class="card__header">
+	      <h3></h3>
+	      <button>
+		<img src="/assets/images/icon-ellipsis.svg" alt="">
+	      </button>
+	    </div>
+	    <div class="card__stats">
+	      <h2></h2>
+	      <p></p>
+	    </div>
+	  </div>
         </div>
       </div>
     </main>
