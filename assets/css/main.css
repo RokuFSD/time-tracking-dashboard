@@ -54,7 +54,7 @@ li p {
   z-index: 30;
   background: #5847eb;
   color: #fff;
-  border-radius: 0 0 0.75rem 0.75rem;
+  border-radius: 0.75rem;
   padding-inline-start: 1.5rem;
   padding-block: 1rem;
 }
@@ -90,16 +90,64 @@ li p {
   color: #6f76c8;
 }
 .dashboard__card {
+  position: relative;
+  overflow: hidden;
+  height: 9rem;
   background: #1c1f4a;
+  border-radius: 0.75rem;
+  /*
+  img {
+    position: absolute;
+    top: -.75rem;
+    right: 1rem;
+  }
+  */
+}
+.dashboard__card .card__icon {
+  width: 100%;
+  position: absolute;
+  top: -0.75rem;
+}
+.dashboard__card .card__icon img {
+  float: right;
+  padding-inline-end: 1rem;
 }
 .dashboard__card-data {
-  border-radius: 0.75rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 2.25rem;
+  background: #1c1f4a;
+  border-radius: inherit;
   color: #fff;
 }
 
 /*========================= CARDS ========================*/
 #work {
+  margin-block-start: 5rem;
+}
+#work .card__icon {
   background: #ff8c66;
+}
+
+#play .card__icon {
+  background: #56c2e6;
+}
+
+#study .card__icon {
+  background: #ff5c7c;
+}
+
+#exercise .card__icon {
+  background: #4acf81;
+}
+
+#social .card__icon {
+  background: #7536d3;
+}
+
+#self-care .card__icon {
+  background: #f1c65b;
 }
 
 .container {
