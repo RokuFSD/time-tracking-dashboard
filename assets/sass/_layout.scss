@@ -1,3 +1,5 @@
+@use 'global' as g;
+
 .container{
   max-width: 80%;
   margin-inline: auto;
@@ -7,5 +9,10 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
+
+  @include g.mq('tablet'){
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
 }
 

@@ -1,4 +1,4 @@
-const data = [
+data = '[
   {
     "title": "Work",
     "timeframes": {
@@ -101,60 +101,4 @@ const data = [
       }
     }
   }
-];
-
-
-const selector = document.querySelectorAll('a[href="javascript:void(0)"]');
-const cardsData = document.querySelectorAll(".data__stats");
-
-
-const insertValue = (value, index) => {
-  cardsData[index].querySelector("p").innerHTML = value.previous > 1 ? `Previous - ${value.previous}hrs`:`Previous - ${value.previous}hr`;
-
-  cardsData[index].querySelector("h2").innerHTML = value.current > 1 ? `${value.current}hrs` : `${value.current}hr`;
-}
-
-data.map((value, index)=> { // Carga datos iniciales daily por defecto
-  insertValue(value.timeframes.daily, index);
-});
-
-
-for(let boton of selector){
-  boton.addEventListener("click", () => {
-    const actual = document.querySelector(".selected");
-
-    if(boton.id != actual.id){
-      boton.classList.toggle('selected');
-      actual.classList.toggle('selected');
-      changeCards(boton.id);
-    }
-  })
-}
-
-const changeCards = (option) => {
-  console.log(option);
-  switch(option){
-    case 'daily':
-      data.map((value, index)=> {
-	insertValue(value.timeframes.daily, index);
-      });
-      break;
-
-    case 'weekly':
-      data.map((value, index)=> {
-	insertValue(value.timeframes.weekly, index);
-      });
-      break;
-
-    case 'monthly':
-      data.map((value, index)=> {
-	insertValue(value.timeframes.monthly, index);
-      });
-      break;
-
-    default:
-      console.log("Error at getting option");
-  }
-}
-
-
+]';

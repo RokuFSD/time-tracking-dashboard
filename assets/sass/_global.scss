@@ -88,6 +88,7 @@ li {
 /*====================== DASHBOARD ====================*/
 
 .dashboard {
+
   &__main {
     @include flex-container(column, center, space-between, wrap);
     position: relative;
@@ -136,22 +137,36 @@ li {
 	  text-decoration: none;
 	}
 
-	a:hover{
-	  color: $white;
-	}
-
+	a:hover,
 	.selected{
 	  color: $white;
+	  transition: color 0.5s ease-in-out;
 	}
       }
     }
+
+    @include mq('tablet'){
+      grid-column: span 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+
+      @include flex-container(row, center, flex-start, wrap);
+
+      &-profile{
+	height: 80%;
+      }
+
+      &-selector{
+	height: 20%;
+	bottom: 0;
+      }
   }
+}
 
   &__card {
     position: relative;
     overflow: hidden;
     height: 9rem;
-    background: $nt-dark-blue;
     border-radius: .75rem;
 
     .card__icon{
@@ -164,14 +179,6 @@ li {
 	padding-inline-end: 1rem;
       }
     }
-
-    /*
-    img {
-      position: absolute;
-      top: -.75rem;
-      right: 1rem;
-    }
-    */
 
     &-data {
       @include flex-container(column, flex-start, flex-start, wrap);
@@ -210,10 +217,23 @@ li {
 	border: none;
 	cursor: pointer;
 
-	img:hover{
-	  filter: brightness(200%);
+	&:hover,
+	&:active{
+	  img{
+	    filter: brightness(200%);
+	  }
 	}
       }
+
+      &:hover{
+	background: $nt-desaturated-blue;
+	cursor: pointer;
+	transition: background .5s ease-out;
+      }
+    }
+
+    @include mq('tablet'){
+      grid-column: span 3;
     }
   }
 }
@@ -224,8 +244,11 @@ li {
   .card__icon{
     background: $pr-orange;
   }
-
   margin-block-start: 5rem;
+
+  @include mq('tablet'){
+    margin: 0;
+  }
 
 }
 
