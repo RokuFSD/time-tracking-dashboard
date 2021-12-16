@@ -58,6 +58,7 @@ $breakpoints: (
 *,
 ::after,
 ::before {
+  -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -143,6 +144,10 @@ li {
           color: $white;
           transition: color 0.5s ease-in-out;
         }
+
+	a:active{
+
+	}
       }
     }
 
@@ -348,7 +353,7 @@ li {
 /*========================= FOOTER ===========================*/
 
 .attribution {
-
+  color: $white;
   font-size: 11px;
   text-align: center;
 

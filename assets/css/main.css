@@ -10,6 +10,7 @@
 *,
 ::after,
 ::before {
+  -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -289,6 +290,7 @@ li p {
 
 /*========================= FOOTER ===========================*/
 .attribution {
+  color: #fff;
   font-size: 11px;
   text-align: center;
 }
