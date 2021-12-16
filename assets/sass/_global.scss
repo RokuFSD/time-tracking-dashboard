@@ -68,13 +68,15 @@ img {
 }
 
 html {
-  height: 100vh;
+  min-height: 100%;
 }
 
 body {
-  height: 100%;
+  min-height: 100vh;
   font-family: "Rubik", sans-serif;
   background: $nt-very-dark-blue;
+  @include flex-container(column, center, center, nowrap);
+  gap: 4rem;
 }
 
 li {
@@ -88,19 +90,18 @@ li {
 /*====================== DASHBOARD ====================*/
 
 .dashboard {
-
   &__main {
+    width: 100%;
     @include flex-container(column, center, space-between, wrap);
     position: relative;
 
     &-profile {
-      @include flex-container(row, flex-start, center, wrap);
       z-index: 30;
+      @include flex-container(row, center, center, wrap);
+      padding-block: 1rem;
       background: $pr-blue;
       color: $white;
-      border-radius: .75rem;
-      padding-inline-start: 1.5rem;
-      padding-block: 1rem;
+      border-radius: 0.75rem;
 
       img {
         max-width: 3.5em;
@@ -132,51 +133,98 @@ li {
         @include flex-container(row, space-around, flex-end, wrap);
         padding-block: 2rem 1.5rem;
 
-	a{
-	  color: $nt-desaturated-blue;
-	  text-decoration: none;
-	}
+        a {
+          color: $nt-desaturated-blue;
+          text-decoration: none;
+        }
 
-	a:hover,
-	.selected{
-	  color: $white;
-	  transition: color 0.5s ease-in-out;
-	}
+        a:hover,
+        .selected {
+          color: $white;
+          transition: color 0.5s ease-in-out;
+        }
       }
     }
 
-    @include mq('tablet'){
+    @include mq("tablet") {
       grid-column: span 3;
       grid-row-start: 1;
       grid-row-end: 3;
+      height: 28rem;
 
       @include flex-container(row, center, flex-start, wrap);
 
-      &-profile{
-	height: 80%;
+      &-profile {
+        padding-inline-start: 1.5rem;
+        padding-block-start: 1.5rem;
+        width: 100%;
+        height: 65%;
+        @include flex-container(column, flex-start, flex-start, wrap);
+        gap: 2rem;
+
+        img {
+          max-width: 4rem;
+          margin: 0;
+        }
+
+        h2 {
+          font-size: 2em;
+        }
       }
 
-      &-selector{
-	height: 20%;
-	bottom: 0;
+      &-selector {
+        height: 40%;
+        bottom: 0;
+
+        ul {
+          @include flex-container(column, space-around, flex-start, nowrap);
+          padding: 2rem 0 1rem 2rem;
+          height: 100%;
+        }
       }
+    }
   }
-}
 
   &__card {
     position: relative;
     overflow: hidden;
     height: 9rem;
-    border-radius: .75rem;
+    border-radius: 0.75rem;
 
-    .card__icon{
+    .card__icon {
       width: 100%;
       position: absolute;
-      top: -.75rem;
+      top: -0.75rem;
 
-      img{
-	float: right;
-	padding-inline-end: 1rem;
+      img {
+        float: right;
+        padding-inline-end: 1rem;
+      }
+    }
+
+    button {
+      z-index: 30;
+      position: absolute;
+      top: 3rem;
+      right: 2rem;
+      width: 2rem;
+      aspect-ratio: 1;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover,
+      &:active {
+        img {
+          filter: brightness(200%);
+        }
       }
     }
 
@@ -186,54 +234,70 @@ li {
       width: 100%;
       height: 80%;
       top: 2.25rem;
-      padding-inline: 2rem;
+      padding-inline: 1.5rem;
       padding-block-start: 1rem;
       background: $nt-dark-blue;
       border-radius: inherit;
       color: $white;
-      gap: .5rem;
+      gap: 0.5rem;
 
       .data__header,
-      .data__stats{
-	@include flex-container(row, space-between, center, wrap);
-	width: 100%;
+      .data__stats {
+        @include flex-container(row, space-between, center, wrap);
+        width: 100%;
       }
 
-      h3{
-	font-weight: $font-regular;
+      h3 {
+        font-weight: $font-regular;
       }
 
-      h2{
-	font-size: 2em;
-	font-weight: $font-small;
+      h2 {
+        font-size: 2em;
+        font-weight: $font-small;
       }
 
-      p{
-	color: $nt-pale-blue;
+      p {
+        font-size: 0.8em;
+        color: $nt-pale-blue;
       }
 
-      button{
-	background: none;
-	border: none;
-	cursor: pointer;
-
-	&:hover,
-	&:active{
-	  img{
-	    filter: brightness(200%);
-	  }
-	}
-      }
-
-      &:hover{
-	background: $nt-desaturated-blue;
-	cursor: pointer;
-	transition: background .5s ease-out;
+      &:hover {
+        background: $nt-desaturated-blue;
+        cursor: pointer;
+        transition: background 0.5s ease-out;
       }
     }
 
-    @include mq('tablet'){
+    @include mq("tablet") {
       grid-column: span 3;
+      height: 100%;
+
+      button {
+        top: 3.3rem;
+        width: 1rem;
+        aspect-ratio: 1;
+      }
+
+      &-data {
+        z-index: 10;
+        padding-inline: 1.5rem;
+        gap: 2rem;
+
+        h2 {
+          width: 100%;
+          font-size: 3em;
+          margin-block-end: 0.5rem;
+        }
+
+        p {
+          max-width: 7rem;
+          font-size: 0.8em;
+        }
+
+        h3 {
+          font-size: 1em;
+        }
+      }
     }
   }
 }
@@ -241,43 +305,54 @@ li {
 /*========================= CARDS ========================*/
 
 #work {
-  .card__icon{
+  .card__icon {
     background: $pr-orange;
   }
   margin-block-start: 5rem;
 
-  @include mq('tablet'){
+  @include mq("tablet") {
     margin: 0;
   }
-
 }
 
 #play {
-  .card__icon{
+  .card__icon {
     background: $pr-soft-blue;
   }
 }
 
 #study {
-  .card__icon{
+  .card__icon {
     background: $pr-light-red;
   }
 }
 
 #exercise {
-  .card__icon{
+  .card__icon {
     background: $pr-lime-green;
   }
 }
 
 #social {
-  .card__icon{
+  .card__icon {
     background: $pr-violet;
   }
 }
 
 #self-care {
-  .card__icon{
+  .card__icon {
     background: $pr-soft-orange;
+  }
+}
+
+/*========================= FOOTER ===========================*/
+
+.attribution {
+
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
   }
 }

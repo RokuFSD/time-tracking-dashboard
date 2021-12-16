@@ -1,18 +1,23 @@
-@use 'global' as g;
+@use "global" as g;
 
-.container{
-  max-width: 80%;
+.container {
+  min-width: 90%;
   margin-inline: auto;
+
+  @include g.mq("tablet") {
+    max-width: 60rem;
+    min-width: 50rem;
+  }
 }
 
-.grid{
+.grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
 
-  @include g.mq('tablet'){
+  @include g.mq("tablet") {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr 1fr;
+    grid-gap: 1.5rem;
   }
 }
-
