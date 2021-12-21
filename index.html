@@ -14,20 +14,10 @@
     />
 
     <!-- ================ CSS ====================-->
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
 
     <title>Frontend Mentor | Time tracking dashboard</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main class="container">
@@ -35,7 +25,7 @@
       <div class="grid dashboard">
         <div class="dashboard__main">
           <div class="dashboard__main-profile">
-            <img src="/assets/images/image-jeremy.png" alt="profile image" />
+	    <img src="assets/images/image-jeremy.png" alt="profile image" />
             <div>
               <p>Report for</p>
               <h2>Jeremy Robson</h2>
@@ -59,18 +49,19 @@
           </div>
         </div>
 
+	<!-- ================ CARDS ==================== -->
+
         <div class="dashboard__card" id="work">
           <div class="card__icon">
-            <img src="/assets/images/icon-work.svg" alt="" />
+            <img src="assets/images/icon-work.svg" alt="" />
           </div>
+          <button>
+            <img src="assets/images/icon-ellipsis.svg" alt="" />
+          </button>
 
           <div class="dashboard__card-data" id="data">
             <div class="data__header">
               <h3>Work</h3>
-
-              <button>
-                <img src="/assets/images/icon-ellipsis.svg" alt="" />
-              </button>
             </div>
 
             <div class="data__stats">
@@ -82,34 +73,33 @@
 
         <div class="dashboard__card" id="play">
           <div class="card__icon">
-            <img src="/assets/images/icon-play.svg" alt="" />
+            <img src="assets/images/icon-play.svg" alt="" />
           </div>
+          <button>
+            <img src="assets/images/icon-ellipsis.svg" alt="" />
+          </button>
           <div class="dashboard__card-data">
             <div class="data__header">
               <h3>Play</h3>
-
-              <button>
-                <img src="/assets/images/icon-ellipsis.svg" alt="" />
-              </button>
             </div>
 
             <div class="data__stats">
               <h2></h2>
               <p></p>
             </div>
-         </div>
+          </div>
         </div>
 
         <div class="dashboard__card" id="study">
           <div class="card__icon">
-            <img src="/assets/images/icon-study.svg" alt="" />
+            <img src="assets/images/icon-study.svg" alt="" />
           </div>
+          <button>
+            <img src="assets/images/icon-ellipsis.svg" alt="" srcset="" />
+          </button>
           <div class="dashboard__card-data">
             <div class="data__header">
               <h3>Study</h3>
-              <button>
-                <img src="/assets/images/icon-ellipsis.svg" alt="" srcset="" />
-              </button>
             </div>
 
             <div class="data__stats">
@@ -121,15 +111,15 @@
 
         <div class="dashboard__card" id="exercise">
           <div class="card__icon">
-            <img src="/assets/images/icon-exercise.svg" alt="" />
+            <img src="assets/images/icon-exercise.svg" alt="" />
           </div>
 
+          <button>
+            <img src="assets/images/icon-ellipsis.svg" alt="" />
+          </button>
           <div class="dashboard__card-data">
             <div class="data__header">
               <h3>Exercise</h3>
-              <button>
-                <img src="/assets/images/icon-ellipsis.svg" alt="" />
-              </button>
             </div>
 
             <div class="data__stats">
@@ -141,14 +131,14 @@
 
         <div class="dashboard__card" id="social">
           <div class="card__icon">
-            <img src="/assets/images/icon-social.svg" alt="" />
+            <img src="assets/images/icon-social.svg" alt="" />
           </div>
+          <button>
+            <img src="assets/images/icon-ellipsis.svg" alt="" />
+          </button>
           <div class="dashboard__card-data">
             <div class="data__header">
               <h3>Social</h3>
-              <button>
-                <img src="/assets/images/icon-ellipsis.svg" alt="" />
-              </button>
             </div>
             <div class="data__stats">
               <h2></h2>
@@ -159,14 +149,14 @@
 
         <div class="dashboard__card" id="self-care">
           <div class="card__icon">
-            <img src="/assets/images/icon-self-care.svg" alt="" />
+            <img src="assets/images/icon-self-care.svg" alt="" />
           </div>
+          <button>
+            <img src="assets/images/icon-ellipsis.svg" alt="" />
+          </button>
           <div class="dashboard__card-data">
             <div class="data__header">
               <h3>Self-care</h3>
-              <button>
-                <img src="/assets/images/icon-ellipsis.svg" alt="" />
-              </button>
             </div>
             <div class="data__stats">
               <h2></h2>
@@ -183,10 +173,12 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="#">RokuFSD</a>.
       </div>
     </footer>
 
-    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <!-- ================= SCRIPTS ===================== -->
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 </html>
